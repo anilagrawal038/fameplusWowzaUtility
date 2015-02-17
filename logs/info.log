@@ -1,0 +1,4 @@
+2015-02-17 10:30:05,264 [      UtilityLogger.java:main:32] - FamePlusWowzaUtility running. With process ID :: 21827@Anil-Agrawal
+2015-02-17 10:30:05,575 [      UtilityLogger.java:Thread-0:32] - Inside SMILGeneratorJob
+2015-02-17 10:30:05,577 [      UtilityLogger.java:Thread-0:32] - select a.id from event a, booked_channel_slot b where a.booked_channel_slot_id=b.id and a.status='READY';
+2015-02-17 10:30:05,586 [      UtilityLogger.java:Thread-0:32] - Generating SMIL for Event ::E00000001
