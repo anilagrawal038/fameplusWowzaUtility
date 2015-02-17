@@ -5,3 +5,4 @@ famePlus.dbName=fameLive_dev
 famePlus.dbServer=127.0.0.1
 famePlus.dbUser=root
 famePlus.dbPassword=igdefault
+famePlus.wowzaContentPath=/usr/local/WowzaStreamingEngine/content/

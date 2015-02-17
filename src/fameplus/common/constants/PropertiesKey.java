@@ -15,7 +15,8 @@ public enum PropertiesKey {
     DB_SERVER_IP("famePlus.dbServer"),
     DB_USER("famePlus.dbUser"),
     DB_PASSWORD("famePlus.dbPassword"),
-    WOWZA_CONTENT_PATH("famePlus.wowzaContentPath");
+    WOWZA_CONTENT_PATH("famePlus.wowzaContentPath"),
+    PID_FILE_NAME("famePlus.pidFileName");
 
     String value;
 

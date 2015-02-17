@@ -1,0 +1,4 @@
+17 Feb 2015 14:24:14,287 INFO  logger:31 - FamePlusWowzaUtility running. With process ID :: 13753@Anil-Agrawal
+17 Feb 2015 14:24:14,551 INFO  logger:31 - Inside SMILGeneratorJob
+17 Feb 2015 14:24:14,551 INFO  logger:31 - select a.id from event a, booked_channel_slot b, event_operations c where a.booked_channel_slot_id=b.id and a.status='READY' and a.id=c.event_id and c.issmilgenerated=false;
+17 Feb 2015 14:24:14,559 INFO  logger:31 - Going to sleep for 30 Secs

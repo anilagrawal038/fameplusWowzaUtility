@@ -22,15 +22,15 @@ import javax.servlet.jsp.jstl.sql.Result;
  * @author anil
  */
 public class SMILGenerator {
-    
+
     Service service;
-    
+
     public SMILGenerator(DBService service) {
         this.service = (Service) service;
     }
-    
+
     public void executeSMILgeneratorJob() {
-        String script = "select a.id from event a, booked_channel_slot b where a.booked_channel_slot_id=b.id and a.status='READY';";
+        String script = "select a.id from event a, booked_channel_slot b, event_operations c where a.booked_channel_slot_id=b.id and a.status='READY' and a.id=c.event_id and c.issmilgenerated=false;";
         UtilityLogger.info(script);
         Result result = service.getData(script);
         int rowCount = result.getRowCount();
@@ -40,9 +40,11 @@ public class SMILGenerator {
             System.out.println("Generating SMIL for Event ::" + eventId);
             UtilityLogger.info("Generating SMIL for Event ::" + eventId);
             generateAndStoreSMIL(eventId);
+            script = "update event_operations set issmilgenerated=true where event_id=" + data[rowCounter][0];
+            service.updateData(script);
         }
     }
-    
+
     private String generateSMIL(String filePrefix) {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("<?xml version='1.0' encoding='UTF-8'?>");
@@ -78,7 +80,7 @@ public class SMILGenerator {
         stringBuffer.append("</smil>");
         return stringBuffer.toString();
     }
-    
+
     private void generateAndStoreSMIL(String streamPrefix) {
         FileOutputStream fos = null;
         try {
