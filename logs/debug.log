@@ -1,8 +1,0 @@
-2015-02-17 10:30:05,589 [      UtilityLogger.java:Thread-0:67] - Exception occured in generateAndStoreSMIL():
-java.io.FileNotFoundException: /usr/local/WowzaStreamingEngine/content/E00000001.smil (Permission denied)
-	at java.io.FileOutputStream.open(Native Method)
-	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
-	at java.io.FileOutputStream.<init>(FileOutputStream.java:171)
-	at fameplus.wowza.main.SMILGenerator.generateAndStoreSMIL(SMILGenerator.java:86)
-	at fameplus.wowza.main.SMILGenerator.executeSMILgeneratorJob(SMILGenerator.java:42)
-	at fameplus.wowza.job.SMILGeneratorJob.run(SMILGeneratorJob.java:26)
